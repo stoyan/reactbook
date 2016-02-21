@@ -4,13 +4,13 @@
 
 
 [include]
-/Users/stoyanstefanov/node_modules/classnames
-/Users/stoyanstefanov/node_modules/fbemitter
-/Users/stoyanstefanov/node_modules/immutable
-/Users/stoyanstefanov/node_modules/invariant
-/Users/stoyanstefanov/node_modules/react
-/Users/stoyanstefanov/node_modules/react-addons-test-utils
-/Users/stoyanstefanov/node_modules/react-dom
+node_modules/classnames
+node_modules/fbemitter
+node_modules/immutable
+node_modules/invariant
+node_modules/react
+node_modules/react-addons-test-utils
+node_modules/react-dom
 
 [libs]
 

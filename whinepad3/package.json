@@ -106,12 +106,12 @@
     }
   },
   "jest": {
-    "scriptPreprocessor": "/Users/stoyanstefanov/node_modules/babel-jest",
+    "scriptPreprocessor": "node_modules/babel-jest",
     "unmockedModulePathPatterns": [
-      "/Users/stoyanstefanov/node_modules/react",
-      "/Users/stoyanstefanov/node_modules/react-dom",
-      "/Users/stoyanstefanov/node_modules/react-addons-test-utils",
-      "/Users/stoyanstefanov/node_modules/fbjs"
+      "node_modules/react",
+      "node_modules/react-dom",
+      "node_modules/react-addons-test-utils",
+      "node_modules/fbjs"
     ]
   }
 }
