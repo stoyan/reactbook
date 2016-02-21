@@ -1,0 +1,26 @@
+html {
+  background-color: #f0f0f0;
+  font: 16px Arial;
+}
+
+body {
+  margin: 0;
+}
+
+input, textarea {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.app-header {
+  background-color: #6F001B;
+  color: #F0F0F0;
+  font-family: 'Norican', cursive;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 900;
+  margin: 0;
+  padding: 20px 20px 20px 14px;
+  vertical-align: middle;
+}
+

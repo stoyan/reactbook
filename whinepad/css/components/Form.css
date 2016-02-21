@@ -1,0 +1,11 @@
+.Form .FormLabel {
+  color: #A0A0A0;
+  display: block;
+  font-size: 12px;
+  padding: 12px 0 6px;
+}
+
+.Form .FormRow {
+  padding-left: 20px;
+  text-align: left;
+}

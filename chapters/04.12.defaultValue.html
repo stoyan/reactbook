@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>defaultValue</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="babel/browser.js"></script>
+    <script type="text/babel">
+      function log(event) {
+        console.log("value: ", event.target.value);
+        console.log("defaultValue: ", event.target.defaultValue);
+      }
+      
+      ReactDOM.render(
+        <input defaultValue="hello" onChange={log} />,
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>

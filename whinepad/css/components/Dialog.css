@@ -1,0 +1,58 @@
+.Dialog {
+  border: 1px solid lightgray;
+}
+
+.DialogModalOpen {
+  overflow: hidden; /* no body scroll */
+}
+
+.Dialog .DialogHeader {
+  background-color: #6F001B;
+  color: #F0F0F0;
+  font-family: Norican, cursive;
+  font-size: 42px;
+  margin: 0;
+  padding: 10px 10px 10px 20px;
+  text-align: left;
+}
+
+.Dialog .DialogBody {
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  max-height: 50vh;
+  overflow-x: hidden;
+  padding: 10px 30px 30px 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.Dialog .DialogFooter {
+  padding: 10px;
+  text-align: right;
+}
+
+.DialogModal {
+	background: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.DialogModal .DialogModalWrap {
+	background: white;
+	margin: 5% auto;
+	width: 350px;
+}
+
+.DialogDismiss {
+  color: gray;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.DialogFooter .Button {
+  margin: 10px;
+}

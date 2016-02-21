@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSX multiple nodes</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="babel/browser.js"></script>
+    <script type="text/babel">
+      var Example = React.createClass({
+        render: function() {
+          
+          var greeting = [
+            <span key="greet">Hello</span>,
+            ' ',
+            <span key="world">World</span>,
+            '!',
+          ];
+          
+          return (
+            <div>
+              {greeting}
+            </div>
+          );
+        }
+      });
+      
+      ReactDOM.render(
+        <Example/>,
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+[ignore]
+.*/react/node_modules/.*
+.*/fbemitter/node_modules/.*
+
+
+[include]
+/Users/stoyanstefanov/node_modules/classnames
+/Users/stoyanstefanov/node_modules/fbemitter
+/Users/stoyanstefanov/node_modules/immutable
+/Users/stoyanstefanov/node_modules/invariant
+/Users/stoyanstefanov/node_modules/react
+/Users/stoyanstefanov/node_modules/react-addons-test-utils
+/Users/stoyanstefanov/node_modules/react-dom
+
+[libs]
+
+[options]

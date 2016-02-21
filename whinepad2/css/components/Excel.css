@@ -1,0 +1,46 @@
+.Excel input {
+  font: 16px Arial;
+}
+
+.Excel td {
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+.Excel th {
+  color: #7f7f7f;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 5px;
+  text-align: center;
+}
+
+.Excel table {
+  width: 100%;
+}
+
+.Excel .ExcelNotSortable {
+  cursor: default;
+}
+
+.Excel .ExcelEditable {
+  cursor: cell;
+}
+
+.Excel .ExcelEditable:hover {
+  background: #FBFBFB;
+}
+
+.Excel .ExcelDataCenter {
+  text-align: center;
+}
+
+.Excel .ExcelDataLeft {
+  padding: 0 10px;
+  text-align: left;
+}
+
+.Excel .ExcelDataRight {
+  text-align: right;
+}

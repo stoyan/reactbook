@@ -1,0 +1,16 @@
+.schema-name {
+  color: #333333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.schema-year {
+  color: gray;
+  font-size: 16px;
+}
+
+.schema-grape {
+  color: #921130;
+  font-size: 16px;
+  font-weight: bold;
+}

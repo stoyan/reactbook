@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>style {}</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+      ReactDOM.render(
+        /*
+        // COUNTEREXAMPLE
+        // this doesn't work
+        React.DOM.h1(
+          {
+            style: "background: black; color: white; font-family: Verdana",
+          },
+          "Hello world!"
+        ),
+        */
+        
+        // PROPER EXAMPLE
+        // this works
+        React.DOM.h1(
+          {
+            style: {
+              background: "black",
+              color: "white",
+              fontFamily: "Verdana",
+            }
+          },
+          "Hello world!"
+        ),      
+        
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>

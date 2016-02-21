@@ -1,0 +1,8 @@
+.Logo {
+  background-image: url('../../images/wp-logo2.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 80px;
+  vertical-align: middle;
+  width: 111px;
+}

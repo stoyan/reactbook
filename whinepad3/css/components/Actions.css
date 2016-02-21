@@ -1,0 +1,29 @@
+.Actions span {
+  border-radius: 150%;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  height: 25px;
+  margin: 5px 15px 5px 15px;
+  padding-top: 6px;
+  text-align: center;
+  transition-duration: 0.1s;
+  transition-property: transform;
+  width: 33px;
+}
+
+.Actions span:hover {
+  transform: scale(1.1);
+}
+
+.Actions .ActionsInfo {
+  border-color: #3498DB;
+  color: #3498DB;
+}
+
+.Actions .ActionsDelete {
+  border-color: #B7477D;
+  color: #B7477D;
+}

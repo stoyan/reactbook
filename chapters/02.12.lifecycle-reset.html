@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lifecycle reset</title>
+    <style>
+      body, textarea {
+        font-family: Courier;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+
+      var TextAreaCounter = React.createClass({
+
+        componentDidUpdate: function(oldProps, oldState) {
+          if (this.state.text.length > 3) {
+            console.log('The text is too long, abort, abort!');
+            this.replaceState(oldState);
+          }
+        },
+        
+        propTypes: {
+          defaultValue: React.PropTypes.string,
+        },
+
+        getInitialState: function() {
+          return {
+            text: this.props.defaultValue,
+          };
+        },
+
+        _textChange: function(ev) {
+          this.setState({
+            text: ev.target.value,
+          });
+        },
+
+        render: function() {
+          return React.DOM.div(null,
+            React.DOM.textarea({
+              value: this.state.text,
+              onChange: this._textChange,
+            }),
+            React.DOM.h3(null, this.state.text.length)
+          );
+        }
+      });
+
+      var myTextAreaCounter = ReactDOM.render(
+        React.createElement(TextAreaCounter, {
+          defaultValue: "Bob",
+        }),
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>

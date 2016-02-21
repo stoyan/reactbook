@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>defaultValue</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="babel/browser.js"></script>
+    <script type="text/babel">
+      var MySelect1 = React.createClass({
+        render: function() {
+          return (
+            <select defaultValue="move">
+              <option value="stay">Should I stay</option>
+              <option value="move">or should I go</option>
+              <option value="trouble">If I stay it will be trouble</option>
+            </select>
+          );
+        }
+      });
+
+      var MySelect2 = React.createClass({
+        getInitialState: function() {
+          return {value: 'move'};
+        },
+        _onChange: function(event) {
+          this.setState({value: event.target.value});
+        }, 
+        render: function() {
+          return (
+            <select value={this.state.value} onChange={this._onChange}>
+              <option value="stay">Should I stay</option>
+              <option value="move">or should I go</option>
+              <option value="trouble">If I stay it will be trouble</option>
+            </select>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <div>
+          <MySelect1 />
+          <MySelect2 />
+        </div>
+        ,
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>

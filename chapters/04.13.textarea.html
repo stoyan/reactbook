@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>textarea</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3"></div>
+    <div id="app4"></div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="babel/browser.js"></script>
+    <script type="text/babel">
+      function log(event) {
+        console.log("value: ", event.target.value);
+        console.log("defaultValue: ", event.target.defaultValue);
+      }
+      
+      ReactDOM.render(
+        <textarea defaultValue="hello\nworld" onChange={log} />,
+        document.getElementById('app1')
+      );
+      ReactDOM.render(
+        <textarea defaultValue={"hello\nworld"} onChange={log} />,
+        document.getElementById('app2')
+      );
+      ReactDOM.render(
+        <textarea onChange={log}>hello
+world
+        </textarea>,
+        document.getElementById('app3')
+      );
+      ReactDOM.render(
+        <textarea onChange={log}>{"hello\n\
+world"}
+        </textarea>,
+        document.getElementById('app4')
+      );
+    </script>
+  </body>
+</html>
