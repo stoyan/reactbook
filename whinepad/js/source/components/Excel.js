@@ -208,7 +208,7 @@ class Excel extends Component {
                     <td 
                       className={classNames({
                         [`schema-${schema.id}`]: true,
-                        'ExcelEditable': isRating,
+                        'ExcelEditable': !isRating,
                         'ExcelDataLeft': schema.align === 'left',
                         'ExcelDataRight': schema.align === 'right',
                         'ExcelDataCenter': schema.align !== 'left' && schema.align !== 'right',
