@@ -21,6 +21,12 @@
           defaultValue: React.PropTypes.string,
         },
 
+        getDefaultProps: function() {
+          return {
+            text: '',
+          };
+        },
+
         getInitialState: function() {
           return {
             text: this.props.defaultValue,

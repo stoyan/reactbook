@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>State</title>
+    <title>Stateless</title>
     <meta charset="utf-8">
     <style>
       body, textarea {
@@ -20,6 +20,12 @@
 
         propTypes: {
           text: React.PropTypes.string,
+        },
+        
+        getDefaultProps: function() {
+          return {
+            text: '',
+          };
         },
 
         render: function() {

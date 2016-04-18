@@ -53,7 +53,7 @@
         
         componentDidMount: function() {
           document.onkeydown = function(e) {
-            if (e.altKey && e.shiftKey && e.which === 82) { // ALT+SHIFT+R(eplay)
+            if (e.altKey && e.shiftKey && e.keyCode === 82) { // ALT+SHIFT+R(eplay)
               this._replay();
             }
           }.bind(this);
