@@ -32,8 +32,8 @@ class Excel extends Component {
     const descending = this.state.sortby === key && !this.state.descending;
     data.sort((a, b) =>
       descending 
-        ? a[key] < b[key]
-        : a[key] > b[key]
+        ? (a[key] < b[key] ? 1 : -1)
+        : (a[key] > b[key] ? 1 : -1)
     );
     this.setState({
       data: data,

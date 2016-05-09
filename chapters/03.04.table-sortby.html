@@ -40,8 +40,8 @@
           var descending = this.state.sortby === column && !this.state.descending;
           data.sort(function(a, b) {
             return descending 
-              ? a[column] < b[column]
-              : a[column] > b[column];
+              ? (a[column] < b[column] ? 1 : -1)
+              : (a[column] > b[column] ? 1 : -1);
           });
           this.setState({
             data: data,

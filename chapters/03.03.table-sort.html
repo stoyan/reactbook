@@ -34,7 +34,7 @@
           var column = e.target.cellIndex;
           var data = this.state.data.slice();
           data.sort(function(a, b) {
-            return a[column] > b[column];
+            return a[column] > b[column] ? 1 : -1;
           });
           this.setState({
             data: data,
