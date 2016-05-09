@@ -15,8 +15,16 @@ type State = {
 };
 
 class Rating extends Component {
+  
   props: Props;
   state: State;
+  
+  static defaultProps = {
+    defaultValue: 0,
+    max: 5,
+    readonly: false,
+  };
+  
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -48,8 +56,8 @@ class Rating extends Component {
     this.setRating(nextProps.defaultValue);
   }
  
-  render(): HTMLElement {
-    const stars: Array<HTMLSpanElement> = [];
+  render() {
+    const stars = [];
     for (let i: number = 1; i <= this.props.max; i++) {
       stars.push(
         <span 
@@ -81,10 +89,5 @@ class Rating extends Component {
     );
   }  
 }
-
-Rating.defaultProps = {
-  defaultValue: 0,
-  max: 5,
-};
 
 export default Rating

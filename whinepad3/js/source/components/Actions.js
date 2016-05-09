@@ -6,7 +6,7 @@ type Props = {
   onAction: Function,
 };
 
-const Actions = (props: Props): HTMLDivElement =>
+const Actions = (props: Props) =>
   <div className="Actions">
     <span 
       tabIndex="0"

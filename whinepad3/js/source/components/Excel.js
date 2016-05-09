@@ -104,7 +104,7 @@ class Excel extends Component {
     CRUDActions.updateRecord(index, this.refs.form.getData());
   }
 
-  render(): HTMLElement {
+  render() {
     return (
       <div className="Excel">
         {this._renderTable()}
@@ -113,7 +113,7 @@ class Excel extends Component {
     );
   }
   
-  _renderDialog(): ?HTMLElement {
+  _renderDialog() {
     if (!this.state.dialog) {
       return null;
     }
@@ -130,7 +130,7 @@ class Excel extends Component {
     }
   }
   
-  _renderDeleteDialog(): ?HTMLElement {
+  _renderDeleteDialog() {
     const index = this.state.dialog && this.state.dialog.idx;
     invariant(typeof index === 'number', 'Unexpected dialog state');
     const first = this.state.data.get(index);
@@ -147,7 +147,7 @@ class Excel extends Component {
     );
   }
   
-  _renderFormDialog(readonly: ?boolean): ?HTMLElement {
+  _renderFormDialog(readonly: ?boolean) {
     const index = this.state.dialog && this.state.dialog.idx;
     invariant(typeof index === 'number', 'Unexpected dialog state');
     return (
@@ -161,12 +161,12 @@ class Excel extends Component {
         <Form
           ref="form"
           recordId={index}
-          readonly={readonly} />
+          readonly={!!readonly} />
       </Dialog>
     ); 
   }
   
-  _renderTable(): HTMLElement {
+  _renderTable() {
     return (
       <table>
         <thead>

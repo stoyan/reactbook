@@ -20,24 +20,24 @@ CRUDStore.init(schema);
 ReactDOM.render(
   <div style={{padding: '20px'}}>
     <h1>Component discoverer</h1>
-    
+
     <h2>Logo</h2>
     <div style={{display: 'inline-block', background: 'purple'}}><Logo /></div>
-    
+
     <h2>Buttons</h2>
     <div>Button with onClick: <Button onClick={() => alert('ouch')}>Click me</Button></div>
     <div>A link: <Button href="http://reactjs.com">Follow me</Button></div> 
     <div>Custom class name: <Button className="custom">I do nothing</Button></div> 
-    
+
     <h2>Suggest</h2>
     <Suggest options={['eenie', 'meenie', 'miney', 'mo']} />
-    
+
     <h2>Rating</h2>
     <div>No initial value: <Rating /></div>
     <div>Initial value 4: <Rating defaultValue={4} /></div>
     <div>This one goes to 11: <Rating max={11} /></div>
     <div>Read-only: <Rating readonly={true} defaultValue={3} /></div>
-    
+
     <h2>Form inputs</h2>
     <table><tbody>
       <tr>
@@ -68,19 +68,17 @@ ReactDOM.render(
         <td><FormInput type="text" /></td>
       </tr>
     </tbody></table>
-    
+
     <h2>Form</h2>
-    
+
     <Form />
 
     <h2>Form readonly</h2>
-    
+
     <Form readonly={true} recordId={0} />
 
-    
     <h2>Actions</h2>
     <div><Actions onAction={type => alert(type)} /></div>
-
 
     <h2>Dialog</h2>
     <div><Dialog 
@@ -96,10 +94,9 @@ ReactDOM.render(
         onAction={type => alert(type)}>
         Anything goes here, see: <Button>A button</Button>
         </Dialog></div>
-    
-    
+
     {/* more components go here... */}
-    
+
   </div>,
   document.getElementById('pad')
 );

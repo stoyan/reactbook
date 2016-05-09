@@ -14,7 +14,9 @@ type State = {
 };
 
 class Whinepad extends Component {
+  
   state: State;
+  
   constructor() {
     super();
     this.state = {
@@ -44,7 +46,7 @@ class Whinepad extends Component {
     }
   }
     
-  render(): HTMLElement {
+  render() {
     return (
       <div className="Whinepad">
         <div className="WhinepadToolbar">

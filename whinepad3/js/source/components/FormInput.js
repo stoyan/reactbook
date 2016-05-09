@@ -9,22 +9,28 @@ type FormInputFieldType = 'year' | 'suggest' | 'rating' | 'text' | 'input';
 export type FormInputFieldValue = string | number;
 
 export type FormInputField = {
-  type: ?FormInputFieldType,
-  id: ?string,
-  options: ?Array<string>,
-  defaultValue: FormInputFieldValue,
-  label: ?string,
+  type: FormInputFieldType,
+  defaultValue?: FormInputFieldValue,
+  id?: string,
+  options?: Array<string>,
+  label?: string,
 };
 
 class FormInput extends Component {
+  
   props: FormInputField;
+  
+  static defaultProps = {
+    type: 'input',
+  };
+    
   getValue(): FormInputFieldValue {
     return 'value' in this.refs.input
       ? this.refs.input.value
       : this.refs.input.getValue();
   }
 
-  render(): HTMLElement {
+  render() {
     const common: Object = {
       id: this.props.id,
       ref: 'input',
@@ -44,7 +50,7 @@ class FormInput extends Component {
         return (
           <Rating
             {...common}
-            defaultValue={parseInt(String(this.props.defaultValue), 10)} />
+            defaultValue={parseInt(this.props.defaultValue, 10)} />
         );
       case 'text':
         return <textarea {...common} />;
@@ -53,10 +59,5 @@ class FormInput extends Component {
     }
   }
 }
-
-FormInput.defaultProps = {
-  defaultValue: '',
-  type: 'input',
-};
 
 export default FormInput

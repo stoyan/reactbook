@@ -9,12 +9,10 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import invariant from 'invariant';
 
-import type Schema from './Whinepad';
-
 type Data = Array<Object>;
 
 type Props = {
-  schema: Array<Schema>,
+  schema: Array<Object>,
   initialData: Data,
   onDataChange: Function,
 };
@@ -142,7 +140,7 @@ class Excel extends Component {
     this._fireDataChange(data);
   }
 
-  render(): HTMLElement {
+  render() {
     return (
       <div className="Excel">
         {this._renderTable()}
@@ -151,7 +149,7 @@ class Excel extends Component {
     );
   }
   
-  _renderDialog(): ?HTMLElement {
+  _renderDialog() {
     if (!this.state.dialog) {
       return null;
     }
@@ -168,7 +166,7 @@ class Excel extends Component {
     }
   }
   
-  _renderDeleteDialog(): ?HTMLElement {
+  _renderDeleteDialog() {
     const index = this.state.dialog ? this.state.dialog.idx : null;
     invariant(typeof index === 'number', 'Unexpected dialog state');
     const first = this.state.data[index];
@@ -185,7 +183,7 @@ class Excel extends Component {
     );
   }
   
-  _renderFormDialog(readonly: ?boolean): ?HTMLElement {
+  _renderFormDialog(readonly: ?boolean) {
     const index = this.state.dialog ? this.state.dialog.idx : null;
     invariant(typeof index === 'number', 'Unexpected dialog state');
     return (
@@ -200,12 +198,12 @@ class Excel extends Component {
           ref="form"
           fields={this.props.schema}
           initialData={this.state.data[index]}
-          readonly={readonly} />
+          readonly={!!readonly} />
       </Dialog>
     ); 
   }
   
-  _renderTable(): HTMLElement {
+  _renderTable() {
     return (
       <table>
         <thead>
@@ -270,7 +268,7 @@ class Excel extends Component {
                   );
                 }, this)}
                 <td className="ExcelDataCenter">
-                  <Actions onAction={this._actionClick.bind(this, rowidx)}/>
+                  <Actions onAction={this._actionClick.bind(this, rowidx)} />
                 </td>
               </tr>
             );

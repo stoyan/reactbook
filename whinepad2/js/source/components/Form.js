@@ -8,12 +8,14 @@ import type {FormInputField, FormInputFieldValue} from './FormInput';
 
 type Props = {
   fields: Array<FormInputField>,
-  initialData: Object,
-  readonly: boolean,
+  initialData?: Object,
+  readonly?: boolean,
 };
 
 class Form extends Component {
+  
   props: Props;
+  
   getData(): Object {
     let data: Object = {};
     this.props.fields.forEach((field: FormInputField) => 
@@ -22,10 +24,10 @@ class Form extends Component {
     return data;
   }
   
-  render(): HTMLElement {
+  render() {
     return (
       <form className="Form">{this.props.fields.map((field: FormInputField) => {
-        const prefilled: FormInputFieldValue = this.props.initialData && this.props.initialData[field.id];
+        const prefilled: FormInputFieldValue = (this.props.initialData && this.props.initialData[field.id]) || '';
         if (!this.props.readonly) {
           return (
             <div className="FormRow" key={field.id}>
@@ -42,7 +44,7 @@ class Form extends Component {
             <span className="FormLabel">{field.label}:</span>
             {
               field.type === 'rating'
-                ? <Rating readonly={true} defaultValue={parseInt(String(prefilled), 10)} />
+                ? <Rating readonly={true} defaultValue={parseInt(prefilled, 10)} />
                 : <div>{prefilled}</div>
             }
           </div>

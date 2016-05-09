@@ -11,3 +11,4 @@ node_modules/invariant
 [libs]
 
 [options]
+esproposal.class_static_fields=enable

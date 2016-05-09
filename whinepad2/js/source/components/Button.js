@@ -8,9 +8,9 @@ type Props = {
   className: ?string,
 };
 
-const Button = (props: Props): HTMLAnchorElement|HTMLButtonElement => 
+const Button = (props: Props) => 
   props.href
-    ? <a {...props} className={classNames('Button', props.className)}/>
-    : <button {...props} className={classNames('Button', props.className)}/>
+    ? <a {...props} className={classNames('Button', props.className)} />
+    : <button {...props} className={classNames('Button', props.className)} />
 
 export default Button

@@ -1,4 +1,5 @@
 /* @flow */
+
 import Button from './Button';
 import Dialog from './Dialog';
 import Excel from './Excel';
@@ -7,18 +8,8 @@ import React, {Component} from 'react';
 
 type Data = Array<Object>;
 
-export type Schema = {
-  id: string,
-  label: string,
-  sample: string|number,
-  show: ?true,
-  align: ?string,
-  options: ?Array<string>,
-  type: ?string,
-};
-
 type Props = {
-  schema: Array<Schema>,
+  schema: Array<Object>,
   initialData: Data,
 };
 
@@ -30,14 +21,13 @@ type State = {
 class Whinepad extends Component {
   props: Props;
   state: State;
-  _preSearchData: ?Data;
+  _preSearchData: Data;
   constructor(props: Props) {
     super(props);
     this.state = {
       data: props.initialData,
       addnew: false,
     };
-    this._preSearchData = null;
   }
   
   _addNewDialog() {
@@ -99,7 +89,7 @@ class Whinepad extends Component {
     this.setState({data: searchdata});
   }
   
-  render(): HTMLElement {
+  render() {
     return (
       <div className="Whinepad">
         <div className="WhinepadToolbar">
@@ -115,7 +105,7 @@ class Whinepad extends Component {
               placeholder="Search..." 
               onChange={this._search.bind(this)}
               onFocus={this._startSearching.bind(this)}
-              onBlur={this._doneSearching.bind(this)}/>
+              onBlur={this._doneSearching.bind(this)} />
           </div>
         </div>
         <div className="WhinepadDatagrid">

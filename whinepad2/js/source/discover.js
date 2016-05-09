@@ -18,7 +18,7 @@ ReactDOM.render(
     <h1>Component discoverer</h1>
     
     <h2>Logo</h2>
-    <div style={{display: 'inline-block', background: 'purple'}}><Logo/></div>
+    <div style={{display: 'inline-block', background: 'purple'}}><Logo /></div>
     
     <h2>Buttons</h2>
     <div>Button with onClick: <Button onClick={() => alert('ouch')}>Click me</Button></div>
@@ -31,7 +31,7 @@ ReactDOM.render(
     <h2>Rating</h2>
     <div>No initial value: <Rating /></div>
     <div>Initial value 4: <Rating defaultValue={4} /></div>
-    <div>This one goes to 11: <Rating max={11}/></div>
+    <div>This one goes to 11: <Rating max={11} /></div>
     <div>Read-only: <Rating readonly={true} defaultValue={3} /></div>
     
     <h2>Form inputs</h2>
@@ -70,7 +70,7 @@ ReactDOM.render(
     <Form 
       fields={[
         {label: 'Rating', type: 'rating', id: 'rateme'},
-        {label: 'Greetings', id: 'freetext'},
+        {label: 'Greetings', type: 'input', id: 'freetext'},
       ]} 
       initialData={{rateme: 4, freetext: 'Hello'}} />
 
@@ -79,14 +79,14 @@ ReactDOM.render(
     <Form 
       fields={[
         {label: 'Rating', type: 'rating', id: 'rateme'},
-        {label: 'Greetings', id: 'freetext'},
+        {label: 'Greetings', type: 'input', id: 'freetext'},
       ]} 
       initialData={{rateme: 4, freetext: 'Hello'}}
       readonly={true} />
 
     
     <h2>Actions</h2>
-    <div><Actions onAction={type => alert(type)}/></div>
+    <div><Actions onAction={type => alert(type)} /></div>
 
 
     <h2>Dialog</h2>
@@ -103,7 +103,6 @@ ReactDOM.render(
         onAction={type => alert(type)}>
         Anything goes here, see: <Button>A button</Button>
         </Dialog></div>
-    
     
     {/* more components go here... */}
     

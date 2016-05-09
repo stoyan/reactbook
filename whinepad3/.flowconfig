@@ -2,7 +2,6 @@
 .*/react/node_modules/.*
 .*/fbemitter/node_modules/.*
 
-
 [include]
 node_modules/classnames
 node_modules/fbemitter
@@ -15,3 +14,4 @@ node_modules/react-dom
 [libs]
 
 [options]
+esproposal.class_static_fields=enable

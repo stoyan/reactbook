@@ -8,13 +8,20 @@ type Props = {
   confirmLabel: string,
   modal: boolean,
   onAction: Function,
-  hasCancel: boolean,
-  children: Array<HTMLElement>,
+  hasCancel: ?boolean,
+  children?: Array<any>,
 };
 
 class Dialog extends Component {
 
   props: Props;
+  
+  static defaultProps = {
+    confirmLabel: 'ok',
+    modal: false,
+    onAction: (_) => {},
+    hasCancel: true,
+  };
   
   componentWillUnmount() {
     document.body.classList.remove('DialogModalOpen');
@@ -26,7 +33,7 @@ class Dialog extends Component {
     }
   }
   
-  render(): HTMLElement {
+  render() {
     return (
       <div className={this.props.modal ? 'Dialog DialogModal' : 'Dialog'}>
         <div className={this.props.modal ? 'DialogModalWrap' : null}>
@@ -51,12 +58,5 @@ class Dialog extends Component {
     );
   }
 }
-
-Dialog.defaultProps = {
-  confirmLabel: 'ok',
-  modal: false,
-  onAction: () => {},
-  hasCancel: true,
-};
 
 export default Dialog

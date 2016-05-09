@@ -8,11 +8,15 @@ import React, {Component} from 'react';
 import type {FormInputField, FormInputFieldValue} from './FormInput';
 
 type Props = {
-  readonly: boolean,
+  readonly?: boolean,
   recordId: ?number,
 };
 
 class Form extends Component {
+  
+  fields: Array<Object>;
+  initialData: ?Object;
+  
   constructor(props: Props) {
     super(props);
     this.fields = CRUDStore.getSchema();
@@ -29,10 +33,10 @@ class Form extends Component {
     return data;
   }
   
-  render(): HTMLElement {
+  render() {
     return (
       <form className="Form">{this.fields.map((field: FormInputField) => {
-        const prefilled: FormInputFieldValue = this.initialData && this.initialData[field.id];
+        const prefilled: FormInputFieldValue = (this.initialData && this.initialData[field.id]) || '';
         if (!this.props.readonly) {
           return (
             <div className="FormRow" key={field.id}>
@@ -49,7 +53,7 @@ class Form extends Component {
             <span className="FormLabel">{field.label}:</span>
             {
               field.type === 'rating'
-                ? <Rating readonly={true} defaultValue={parseInt(String(prefilled), 10)} />
+                ? <Rating readonly={true} defaultValue={parseInt(prefilled, 10)} />
                 : <div>{prefilled}</div>
             }
           </div>
