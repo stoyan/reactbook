@@ -1,10 +1,10 @@
 /* @flow */
 
+import * as Immutable from 'immutable';
 import Actions from './Actions';
 import CRUDActions from '../flux-imm/CRUDActions';
 import CRUDStore from '../flux-imm/CRUDStore';
 import Dialog from './Dialog';
-import Immutable from 'immutable';
 import Form from './Form';
 import FormInput from './FormInput';
 import Rating from './Rating';

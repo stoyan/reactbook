@@ -1,7 +1,7 @@
 /* @flow */
 
 import CRUDStore from './CRUDStore';
-import Immutable from 'immutable';
+import {List} from 'immutable';
 
 const CRUDActions = {
   create(newRecord: Object) {
@@ -9,7 +9,7 @@ const CRUDActions = {
   },
   
   delete(recordId: number) {
-    let data: Immutable.List<Object> = CRUDStore.getData();
+    let data: List<Object> = CRUDStore.getData();
     CRUDStore.setData(data.remove(recordId));
   },
   

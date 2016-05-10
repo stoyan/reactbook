@@ -1,9 +1,9 @@
 /* @flow */
 
 import {EventEmitter} from 'fbemitter';
-import Immutable from 'immutable';
+import {List} from 'immutable';
 
-let data: Immutable.List<Object>;
+let data: List<Object>;
 let schema;
 const emitter = new EventEmitter();
 
@@ -17,13 +17,13 @@ const CRUDStore = {
     if (!storage) {
       let initialRecord = {};
       schema.forEach(item => initialRecord[item.id] = item.sample);
-      data = Immutable.List([initialRecord]);
+      data = List([initialRecord]);
     } else {
-      data = Immutable.List(JSON.parse(storage));
+      data = List(JSON.parse(storage));
     }
   },
 
-  getData(): Immutable.List<Object> {
+  getData(): List<Object> {
     return data;
   },
   
@@ -31,7 +31,7 @@ const CRUDStore = {
     return schema;
   },
   
-  setData(newData: Immutable.List<Object>, commit: boolean = true) {
+  setData(newData: List<Object>, commit: boolean = true) {
     data = newData;
     if (commit && 'localStorage' in window) {
       localStorage.setItem('data', JSON.stringify(newData));      
