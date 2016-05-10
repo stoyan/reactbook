@@ -75,7 +75,7 @@
         "single",
         "avoid-escape"
       ],
-      "space-after-keywords": 2,
+      "keyword-spacing": 2,
       "space-before-blocks": 2,
       "space-before-keywords": 0,
       "react/display-name": 0,
@@ -99,8 +99,8 @@
       "react/wrap-multilines": [
         2,
         {
-          "declaration": "false",
-          "assignment": "false"
+          "declaration": false,
+          "assignment": false
         }
       ]
     }

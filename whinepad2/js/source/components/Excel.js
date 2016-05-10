@@ -36,8 +36,10 @@ type State = {
 };
 
 class Excel extends Component {
+  
   props: Props;
   state: State;
+  
   constructor(props: Props) {
     super(props);
     this.state = {

@@ -42,7 +42,7 @@ describe('renders with action buttons', () => {
     
     // removing the dialog
     ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(dialog).parentNode);
-    expect(Array.from(document.body.classList)).toNotContain('DialogModalOpen');
+    expect(Array.from(document.body.classList)).not.toContain('DialogModalOpen');
   }); 
   
   it('has head and body', () => {
@@ -74,4 +74,3 @@ describe('renders with action buttons', () => {
   });
   
 });
-

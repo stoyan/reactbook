@@ -19,7 +19,7 @@ class Suggest extends Component {
   
   constructor(props: Props) {
     super(props);
-    this.state = {value: props.defaultValue || props.options[0]};
+    this.state = {value: props.defaultValue || ''};
   }
   
   getValue(): string {

@@ -30,4 +30,3 @@ Actions.defaultProps = {
 };
 
 export default Actions
-
